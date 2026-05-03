@@ -1,23 +1,15 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BackendService } from '../backend-service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
-export class HomePage implements OnInit {
+export class HomePage{
   readonly beService = inject(BackendService);
-
-  data: any = []
-
-  ngOnInit(): void {
-    this.beService.getFilms().subscribe({
-      next: (movies) => this.data = movies,
-      error: (err) => console.error(err)
-    });
-  }
-
+  movies$ = this.beService.getFilms();
 
 }

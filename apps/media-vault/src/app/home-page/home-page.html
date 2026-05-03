@@ -1,5 +1,7 @@
 <div>
-  @for (item of data; track $index) {
-    <div>{{item.originalTitle}}</div>
+  @if (movies$ | async; as movies) {
+  @for (item of movies ; track $index) {
+  <div>{{item.originalTitle}}</div>
+  }
   }
 </div>
