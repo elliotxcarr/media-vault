@@ -12,14 +12,11 @@ export class HomePage implements OnInit {
 
   data: any = []
 
-  async getFilms(){
-    const movies: any = (this.beService.getFilms()).subscribe(data => console.log(data));
-    this.data = movies
-    console.log(movies)
-  }
-
   ngOnInit(): void {
-    this.getFilms()
+    this.beService.getFilms().subscribe({
+      next: (movies) => this.data = movies,
+      error: (err) => console.error(err)
+    });
   }
 
 

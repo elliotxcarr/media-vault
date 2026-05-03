@@ -9,19 +9,6 @@ export class BackendService {
   private readonly http = inject(HttpClient);
 
   getFilms = () => {
-    return this.http.get<any>('http://localhost:3000/api/movies')
+    return this.http.get<any>('http://localhost:3000/movies')
   }
-  //   console.log('in getfilms')
-  //   try {
-  //     const response = await fetch('https://api.imdbapi.dev/titles');
-  //     console.log(response)
-  //     if(!response.ok){
-  //       throw new Error('error')
-  //     }
-  //     const data = await response.json()
-  //     return data.titles
-  //   }
-  //   catch (err) {
-  //     console.error(err)
-  //   }
   }
