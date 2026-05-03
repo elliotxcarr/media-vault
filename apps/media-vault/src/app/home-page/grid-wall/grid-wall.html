@@ -1,0 +1,8 @@
+<div  class="grid grid-cols-6 gap-4 overflow-y-scroll h-full ">
+  @for (item of _movieStore.movies(); track $index) {
+    <div class="flex w-44 h-70 hover:cursor-pointer">
+      <img [src]="item.primaryImage.url"
+      class="w-full h-full hover:opacity-80 duration-200"/>
+    </div>
+  }
+</div>

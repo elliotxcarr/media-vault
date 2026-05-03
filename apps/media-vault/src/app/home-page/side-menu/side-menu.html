@@ -1,0 +1,9 @@
+<div class="flex flex-col w-full h-full bg-gray-700 p-2">
+  <div class="text-2xl text-white w-full text-center">Media Vault</div>
+  
+  <div class="flex flex-col gap-4 p-5">
+    @for (item of _mainStore.menuOptions(); track $index) {
+      <div class="menu-item ">{{item}}</div>
+    }
+  </div>
+</div>

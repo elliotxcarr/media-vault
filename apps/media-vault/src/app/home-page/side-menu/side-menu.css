@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+.menu-item {
+  @apply text-xl
+  text-gray-300
+  hover:bg-gray-600
+  hover:cursor-pointer
+  duration-150
+  border-b
+  border-gray-500
+  py-2
+}

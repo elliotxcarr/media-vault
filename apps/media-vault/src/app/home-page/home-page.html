@@ -1,7 +1,9 @@
-<div>
-  @if (movies$ | async; as movies) {
-  @for (item of movies ; track $index) {
-  <div>{{item.originalTitle}}</div>
-  }
-  }
+<div class="flex flex-row h-dvh bg-gray-900">
+  <div class="w-1/6 ">
+    <app-side-menu/>
+  </div>
+  <div class="m-9">
+    <app-grid-wall/>
+  </div>
+  
 </div>

@@ -1,15 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { BackendService } from '../backend-service';
-import { AsyncPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { GridWall } from './grid-wall/grid-wall';
+import { SideMenu } from './side-menu/side-menu';
 
 @Component({
   selector: 'app-home-page',
-  imports: [AsyncPipe],
+  imports: [GridWall, SideMenu],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
 export class HomePage{
-  readonly beService = inject(BackendService);
-  movies$ = this.beService.getFilms();
-
+  
 }
